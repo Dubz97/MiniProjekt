@@ -12,7 +12,9 @@ public class MiniProjektApplication {
 
     JDBCWriter jdbcWriter = new JDBCWriter();
     boolean hasCon = jdbcWriter.setConnection();
+    boolean hasCon2 = jdbcWriter.setConnection2();
     System.out.println("Har con hasCon=" + hasCon);
+    System.out.println("Har con hasCon=" + hasCon2);
   }
 
 }
