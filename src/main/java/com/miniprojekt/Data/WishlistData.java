@@ -1,6 +1,7 @@
 package com.miniprojekt.Data;
 
 import com.miniprojekt.DBManager.DBManager;
+import com.miniprojekt.model.Joined;
 import com.miniprojekt.model.Wishlist;
 
 import java.sql.Connection;
@@ -27,22 +28,26 @@ public class WishlistData {
 
     }
   }
-  public List<Wishlist> findWishes (){
-    List<Wishlist> result = new ArrayList<>();
+  public List<Joined> findWishes (){
+    List<Joined> result = new ArrayList<>();
     Connection connection = DBManager.getConnection();
-    String SQL = "Select * From Wishlist";
+    String SQL = " SELECT accounts.accountid, Wishlist.id, Wishlist.wish" +
+            "  FROM accounts, Wishlist" +
+            "  WHERE accounts.accountid = Wishlist.id";
     try{
       PreparedStatement ps = connection.prepareStatement(SQL);
       ResultSet rs = ps.executeQuery();
 
       while (rs.next()){
-        result.add(new Wishlist(rs.getInt("id"),
-                rs.getString("wish"),
-                rs.getInt("quantity")));
+        result.add(new Joined(rs.getInt("accountid"),
+                rs.getInt("id"),
+                rs.getString("wish")));
       }
     } catch (SQLException e){
       e.printStackTrace();
     }
     return result;
   }
+
+
 }

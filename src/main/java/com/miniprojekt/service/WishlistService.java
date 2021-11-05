@@ -2,6 +2,7 @@ package com.miniprojekt.service;
 
 import com.miniprojekt.DBManager.DBManager;
 import com.miniprojekt.Data.WishlistData;
+import com.miniprojekt.model.Joined;
 import com.miniprojekt.model.Wishlist;
 
 import java.sql.Connection;
@@ -19,7 +20,7 @@ public class WishlistService {
     public void postWishlistDetails(Wishlist wishlist) {
       wishlistData.postUserDetails(wishlist);
     }
-    public List<Wishlist> findWishes(){
+    public List<Joined> findWishes(){
       return wishlistData.findWishes();
     }
 }
