@@ -58,5 +58,16 @@ public class User {
     public void setLname(String lname) {
         this.lname = lname;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                '}';
+    }
 }
 

@@ -1,7 +1,15 @@
 package com.miniprojekt.service;
 
+import com.miniprojekt.DBManager.DBManager;
 import com.miniprojekt.Data.WishlistData;
 import com.miniprojekt.model.Wishlist;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WishlistService {
 
@@ -11,5 +19,7 @@ public class WishlistService {
     public void postWishlistDetails(Wishlist wishlist) {
       wishlistData.postUserDetails(wishlist);
     }
-
+    public List<Wishlist> findWishes(){
+      return wishlistData.findWishes();
+    }
 }

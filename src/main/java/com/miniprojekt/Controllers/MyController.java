@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
 @Controller
@@ -48,7 +49,7 @@ public class MyController {
       return "index";
     } else {
       model.addAttribute("loginSucces", true);
-      return "index";
+      return "personallist";
     }
   }
   @GetMapping("/personallist")
@@ -66,7 +67,12 @@ public class MyController {
     wishlist.setWish(wish);
     wishlist.setQuantity(quantity);
     wishlistService.postWishlistDetails(wishlist);
+    ;
     return "personallist";
   }
-
+@GetMapping("/findwishes")
+@ResponseBody
+  public String findWishes(){
+    return wishlistService.findWishes().toString();
+}
 }

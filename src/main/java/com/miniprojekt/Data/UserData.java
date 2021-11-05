@@ -38,7 +38,7 @@ import java.sql.SQLException;
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    result = new User(rs.getInt("id"),rs.getString("username"),
+                    result = new User(rs.getInt("accountid"),rs.getString("username"),
                             rs.getString("password"), rs.getString("fname"), rs.getString("lname"));
                 }
             } catch (SQLException e) {

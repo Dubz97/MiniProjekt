@@ -3,6 +3,7 @@ package com.miniprojekt.model;
 public class Wishlist {
 
 private int id;
+
 private String wish;
 private int quantity;
 
@@ -36,5 +37,14 @@ private int quantity;
 
   public void setQuantity(int quantity) {
     this.quantity = quantity;
+  }
+
+  @Override
+  public String toString() {
+    return "Wishlist{" +
+            "id=" + id +
+            ", wish='" + wish + '\'' +
+            ", quantity=" + quantity +
+            '}';
   }
 }
