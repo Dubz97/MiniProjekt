@@ -22,6 +22,7 @@ import java.sql.*;
                 " (id INTEGER NOT NULL AUTO_INCREMENT, " +
                 " wish VARCHAR(255), " +
                 " quantity INTEGER, " +
+                " userId INTEGER NOT NULL, " +
                 " PRIMARY KEY ( id ))";
         stmt.execute(sql);
         System.out.println("Created table in given database...");
