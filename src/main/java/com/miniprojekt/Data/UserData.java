@@ -15,12 +15,14 @@ import java.sql.SQLException;
 
             String query = "insert into accounts(username, password, fname, lname) values (?,?,?,?)";
             PreparedStatement preparedStatement;
+
             try {
                 preparedStatement = conn.prepareStatement(query);
                 preparedStatement.setString(1, user.getUsername());
                 preparedStatement.setString(2, user.getPassword());
-                preparedStatement.setString(3,user.getFname());
-                preparedStatement.setString(4,user.getLname());
+                preparedStatement.setString(3, user.getFname());
+                preparedStatement.setString(4, user.getLname());
+
 
                 preparedStatement.executeUpdate();
             } catch (Exception ignore) {

@@ -1,7 +1,7 @@
 package com.miniprojekt.Controllers;
 
 import com.miniprojekt.model.User;
-import com.miniprojekt.model.Wishlist;
+import com.miniprojekt.model.Wishes;
 import com.miniprojekt.service.UserService;
 import com.miniprojekt.service.WishlistService;
 import org.springframework.stereotype.Controller;
@@ -63,10 +63,10 @@ public class MyController {
   public String save(WebRequest request)  {
     String wish = request.getParameter("wish");
     int quantity = Integer.parseInt(request.getParameter("quantity"));
-    Wishlist wishlist = new Wishlist();
-    wishlist.setWish(wish);
-    wishlist.setQuantity(quantity);
-    wishlistService.postWishlistDetails(wishlist);
+    Wishes wishes = new Wishes();
+    wishes.setWish(wish);
+    wishes.setQuantity(quantity);
+    wishlistService.postWishlistDetails(wishes);
     ;
     return "personallist";
   }
