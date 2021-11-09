@@ -22,5 +22,5 @@ CREATE TABLE `wishes` (
   `wish` varchar(45) DEFAULT NULL,
   `quantity` int NOT NULL,
   PRIMARY KEY (`idWish`),
-  FOREIGN KEY (idWishlist) references wishlist (idWishlist)
+  FOREIGN KEY (idWishlist) references wishlist (idWishList)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

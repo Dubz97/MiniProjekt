@@ -32,8 +32,12 @@ public class MyController {
     user.setFname(fname);
     user.setLname(lname);
     userService.postUserDetails(user);
+    wishlistService.visPis(user);
+
     return "index";
   }
+
+
 
   @PostMapping("/index/login")
   public String indexLogin(WebRequest request, Model model) {
@@ -61,18 +65,20 @@ public class MyController {
 
   @PostMapping("/personallist")
   public String save(WebRequest request)  {
+    User user = new User();
     String wish = request.getParameter("wish");
     int quantity = Integer.parseInt(request.getParameter("quantity"));
     Wishes wishes = new Wishes();
-    wishes.setWish(wish);
+    wishes.setDescription(wish);
     wishes.setQuantity(quantity);
     wishlistService.postWishlistDetails(wishes);
-    ;
+    //wishlistService.visWishlistAcc(wishes);
     return "personallist";
   }
 @GetMapping("/findwishes")
 @ResponseBody
   public String findWishes(){
     return wishlistService.findWishes().toString();
+
 }
 }

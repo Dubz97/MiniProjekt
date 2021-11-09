@@ -5,15 +5,15 @@ public class Wishes {
 
   private int idWish;
   private int idWishlist;
-  private String wish;
+  private String description;
   private int quantity;
 
 
 
-  public Wishes(int id, int userId, String wish, int quantity) {
+  public Wishes(int id, int idWishlist, String description, int quantity) {
     this.idWish = id;
-    this.idWishlist = userId;
-    this.wish = wish;
+    this.idWishlist = idWishlist;
+    this.description = description;
     this.quantity = quantity;
   }
   public Wishes() {}
@@ -34,12 +34,12 @@ public class Wishes {
     this.idWish = idWish;
   }
 
-  public String getWish() {
-    return wish;
+  public String getDescription() {
+    return description;
   }
 
-  public void setWish(String wish) {
-    this.wish = wish;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public int getQuantity() {
@@ -55,7 +55,7 @@ public class Wishes {
     return "Wishlist{" +
         "id=" + idWish +
         ", userId=" + idWishlist +
-        ", wish='" + wish + '\'' +
+        ", wish='" + description + '\'' +
         ", quantity=" + quantity +
         '}';
   }
